@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Guiado</title>
+</head>
+<body>
+    <h1>Ejercicio Guiado</h1>
+
+    <!-- 
+    Cada imagen tiene un atributo 'onclick' que llama a la función 'agregarBordes' 
+    con el id de la imagen y el color del borde como argumentos.
+    Al hacer clic en una imagen, se le agregará un borde de color.
+    -->
+    <img id="img-1" src="https://images.pexels.com/photos/1049298/pexels-photo-1049298.jpeg" style="width: 500px;" alt="" onclick="agregarBordes('img-1', 'red')">
+    <img id="img-2" src="https://images.pexels.com/photos/2570709/pexels-photo-2570709.jpeg" style="width: 500px;" alt="" onclick="agregarBordes('img-2', 'blue')">
+    <img id="img-3" src="https://images.pexels.com/photos/2570473/pexels-photo-2570473.jpeg" style="width: 500px;" alt="" onclick="agregarBordes('img-3', 'green')">
+
+    <script>
+        // Definimos la función 'agregarBordes' que recibe dos parámetros:
+        // 'elementId' (el id del elemento al que queremos agregar el borde)
+        // y 'color' (el color del borde, con valor por defecto "brown")
+        function agregarBordes(elementId, color = "brown") {
+            // Seleccionamos el elemento usando su id
+            let elemento = document.querySelector("#" + elementId);
+            // Cambiamos el estilo del borde del elemento seleccionado
+            elemento.style.border = "dashed 3px " + color;
+        }
+    </script>
+</body>
+</html>
+
+
+<!-- Notas
+Usamos funciones para reutilizar código y hacer que la página sea interactiva.
+
+El DOM permite seleccionar y modificar elementos de la página desde JavaScript.
+
+El atributo onclick en cada imagen llama a la función con diferentes argumentos.
+
+El parámetro color tiene un valor por defecto, por si no se especifica uno.
+
+Cambiamos el estilo del borde usando elemento.style.border. 
+-->

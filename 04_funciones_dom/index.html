@@ -1,0 +1,50 @@
+<!--
+Este archivo HTML muestra cómo usar funciones en JavaScript para manipular el DOM (Document Object Model).
+El DOM permite acceder y modificar los elementos de la página web usando código JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones - DOM</title>
+</head>
+<body>
+    <h1>
+        Funciones - DOM
+    </h1>
+    
+    <!--
+    Cada botón tiene un evento 'onclick' que llama a la función 'pintar' con un color diferente como argumento.
+    Al hacer clic en un botón, se ejecuta la función y se cambia el color de fondo de la página.
+    -->
+    <button onclick="pintar('black')">Pintar Negro</button>
+    <button onclick="pintar('red')">Pintar Rojo</button>
+    <button onclick="pintar('green')">Pintar Verde</button>
+
+    <script>
+        // Definimos la función 'pintar' que recibe un parámetro llamado 'color'
+        function pintar(color){
+            // Usamos 'document.querySelector' para seleccionar el elemento <body> de la página
+            let elemento = document.querySelector("body");
+            // Cambiamos el color de fondo del body usando el parámetro recibido
+            elemento.style.backgroundColor = color
+        }
+    </script>
+</body>
+</html>
+
+<!-- Notas
+
+Usamos funciones para organizar el código y reutilizarlo fácilmente.
+
+El DOM es la estructura que representa los elementos HTML en JavaScript.
+
+Con document.querySelector("body") seleccionamos el elemento <body>.
+
+Cambiamos el color de fondo usando elemento.style.backgroundColor = color.
+
+Los eventos como onclick permiten ejecutar funciones cuando el usuario interactúa con la página. 
+
+-->

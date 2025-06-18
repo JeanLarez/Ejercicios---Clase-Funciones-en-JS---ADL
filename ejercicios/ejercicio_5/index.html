@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h1>
+        Ejercicio 5
+    </h1>
+
+    <h2>Comparar Valor</h2>
+
+    <!-- 
+    Input para que el usuario ingrese un número.
+    El botón ejecuta la función 'mostrarResultado' al hacer clic.
+    -->
+    <input type="number" id="input-valor" placeholder="Ingresa un número" />
+    <button onclick="mostrarResultado()">Verificar</button>
+
+    <!-- 
+    Este párrafo mostrará el resultado de la comparación.
+    -->
+    <p id="resultado"></p>
+
+    <script>
+        // Esta función recibe un selector y un parámetro para comparar.
+        // Devuelve un mensaje según el valor ingresado por el usuario.
+        function getValue(selector, parametro) {
+            // Obtenemos el valor del input y lo convertimos a número
+            const valor = Number(document.querySelector(selector).value);
+
+            // Comparamos el valor con el parámetro y retornamos un mensaje diferente según el caso
+            if (valor > parametro) {
+                return "Mucho";
+            } else if (valor === parametro) {
+                return "Exacto";
+            } else {
+                return "Muy poco";
+            }
+        }
+
+        // Esta función muestra el mensaje en el DOM usando el valor retornado por getValue
+        function mostrarResultado() {
+            // Llamamos a getValue con el selector del input y el número 10 como parámetro de comparación
+            const mensaje = getValue('#input-valor', 10);
+            // Mostramos el mensaje en el elemento con id 'resultado'
+            document.querySelector('#resultado').innerText = mensaje;
+        }
+    </script>
+</body>
+</html>
+
+<!-- Notas 
+La función getValue utiliza return para devolver un mensaje según la comparación entre el valor ingresado y el parámetro.
+
+La función mostrarResultado usa el valor retornado y lo muestra en el DOM, haciendo la página interactiva.
+
+Así, se separa la lógica de cálculo (comparar valores) de la lógica de presentación (mostrar el resultado). 
+
+-->

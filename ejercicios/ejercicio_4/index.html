@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h1>
+        Ejercicio 4
+    </h1>
+
+    <!-- 
+    Creamos dos divs con diferentes colores de fondo y tamaños.
+    Cada uno tiene un id único para poder seleccionarlos fácilmente desde JavaScript.
+    -->
+    <div id="el-1" class="element" style="background-color: red; width: 250px; height: 250px;"></div>
+    <div id="el-2" class="element" style="background-color: yellow; width: 250px; height: 250px;"></div>
+
+    <script>
+        // Definimos una función llamada 'getBKgColor' que recibe un selector como parámetro
+        function getBKgColor(selector) {
+            // Seleccionamos el elemento del DOM usando el selector recibido
+            let ele = document.querySelector(selector);
+            // Usamos 'return' para devolver el color de fondo del elemento seleccionado
+            return ele.style.backgroundColor;
+        }
+
+        // Llamamos a la función pasando el selector del primer div
+        let backgroundColorElement = getBKgColor("#el-1");
+        // Mostramos el resultado en la consola
+        console.log("El color de fondo del elemento es: " + backgroundColorElement);
+    </script>
+</body>
+</html>
+
+<!-- Notas 
+La función getBKgColor utiliza return para devolver el valor del color de fondo del elemento seleccionado.
+
+Usamos selectores para identificar elementos específicos del DOM.
+
+El valor devuelto por la función se puede guardar en una variable y usarlo después, como en el console.log.
+
+Así, las funciones nos permiten obtener información del DOM de manera sencilla y reutilizable. 
+
+-->
+
+
